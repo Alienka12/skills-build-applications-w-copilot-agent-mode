@@ -17,14 +17,25 @@ const Teams = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Teams</h2>
-      <ul className="list-group">
-        {teams.map(team => (
-          <li key={team.id} className="list-group-item">
-            {team.name}
-          </li>
-        ))}
-      </ul>
+      <h1 className="mb-4 display-5">Teams</h1>
+      <div className="card">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {teams.map(team => (
+                <tr key={team.id}>
+                  <td>{team.name}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };

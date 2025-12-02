@@ -17,14 +17,27 @@ const Leaderboard = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Leaderboard</h2>
-      <ul className="list-group">
-        {entries.map(entry => (
-          <li key={entry.id} className="list-group-item">
-            {entry.user?.name || 'Unknown'} - {entry.score}
-          </li>
-        ))}
-      </ul>
+      <h1 className="mb-4 display-5">Leaderboard</h1>
+      <div className="card">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>User</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {entries.map(entry => (
+                <tr key={entry.id}>
+                  <td>{entry.user?.name || 'Unknown'}</td>
+                  <td>{entry.score}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };

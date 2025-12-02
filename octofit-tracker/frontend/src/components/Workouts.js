@@ -17,14 +17,27 @@ const Workouts = () => {
 
   return (
     <div className="container mt-4">
-      <h2>Workouts</h2>
-      <ul className="list-group">
-        {workouts.map(workout => (
-          <li key={workout.id} className="list-group-item">
-            {workout.name} - {workout.difficulty}
-          </li>
-        ))}
-      </ul>
+      <h1 className="mb-4 display-5">Workouts</h1>
+      <div className="card">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-dark">
+              <tr>
+                <th>Name</th>
+                <th>Difficulty</th>
+              </tr>
+            </thead>
+            <tbody>
+              {workouts.map(workout => (
+                <tr key={workout.id}>
+                  <td>{workout.name}</td>
+                  <td>{workout.difficulty}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
